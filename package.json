@@ -1,0 +1,26 @@
+{
+  "name": "generator-goodco-dashboard-ts",
+  "version": "1.0.0",
+  "description": "A generator for Good&Co Dashboard Angular TypeScript application",
+  "homepage": "",
+  "author": {
+    "name": "Ivan Rogozhnikov",
+    "email": "clevermas@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman-generator",
+    "angular",
+    "typescript"
+  ],
+  "dependencies": {
+    "underscore.string": "^3.2.2",
+    "yeoman-generator": "^0.21.1"
+  },
+  "repository": "clevermas/generator-goodco-dashboard-ts",
+  "license": "MIT"
+}

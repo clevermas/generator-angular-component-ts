@@ -34,7 +34,7 @@ describe('<%= nameCamel %>', function () {
 
         it('should define model data', function () {
             var modelData = 'fake_data';
-            var ctrl = component('<%= nameCamel %>', null, { model: { data: modelData },  onModelChange: function(model) {});
+            var ctrl = component('<%= nameCamel %>', null, { model: { data: modelData },  onModelChange: function(model) {}});
             expect(ctrl.model.data).toBe(modelData);
         });
 
@@ -45,8 +45,8 @@ describe('<%= nameCamel %>', function () {
                     model: {
                         data: 'fake_data'
                     },
-                    onModelChange: function(model) {
-                        model.data = modelData;
+                    onModelChange: function(obj) {
+                        obj.model.data = modelData;
                     }
                 });
             ctrl.modelChange();

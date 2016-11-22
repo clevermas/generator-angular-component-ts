@@ -9,14 +9,14 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
 
-        // This makes `component` a required argument.
-        this.argument('component', {type: String, required: true});
+        // This makes `stateless` a required argument.
+        this.argument('stateless', {type: String, required: true});
 
         // This makes `name` a required argument.
         this.argument('name', {type: String, required: false});
 
         // Set first character lower-case
-        this.component = this.component[0].toLowerCase() + this.component.substr(1);
+        this.component = this.stateless[0].toLowerCase() + this.stateless.substr(1);
         if (!this.name) this.name = this.component;
         this.name = this.name[0].toLowerCase() + this.name.substr(1);
 

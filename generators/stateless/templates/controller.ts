@@ -4,10 +4,8 @@
 
 interface I<%= nameCapitalize %>Ctrl
 {
-    onModelChange: any,
-    model: {
-        data: any
-    }
+    updateEvent: String
+    data: any
 }
 
 /**
@@ -20,21 +18,20 @@ interface I<%= nameCapitalize %>Ctrl
  */
 class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
 {
-    onModelChange: any;
-    model: any;
+    updateEvent: String
+    data: any
 
-    modelChange() {
-        this.onModelChange({ model: this.model });
+    update() {
+        let $self = this
+        $self.$scope.$emit($self.updateEvent, $self.data)
     }
 
-    constructor()
+    constructor(private $scope)
     {
-        let $self = this;
-
-        this.modelChange();
+        let $self = this
     }
 }
 
 angular
     .module('<%= componentCamel %>')
-    .controller('<%= nameCamel %>Ctrl', <%= nameCamel %>Ctrl);
+    .controller('<%= nameCamel %>Ctrl', <%= nameCamel %>Ctrl)

@@ -32,25 +32,10 @@ describe('<%= nameCamel %>', function () {
             component = _$componentController_;
         }));
 
-        it('should define model data', function () {
-            var modelData = 'fake_data';
-            var ctrl = component('<%= nameCamel %>', null, { model: { data: modelData },  onModelChange: function(model) {}});
-            expect(ctrl.model.data).toBe(modelData);
-        });
-
-        it('should change model data', function () {
-            var modelData = 'changed_data';
-            var ctrl = component('<%= nameCamel %>', null,
-                {
-                    model: {
-                        data: 'fake_data'
-                    },
-                    onModelChange: function(obj) {
-                        obj.model.data = modelData;
-                    }
-                });
-            ctrl.modelChange();
-            expect(ctrl.model.data).toBe(modelData);
+        it('should ...', function () {
+            var data = 'fake_data';
+            var ctrl = component('<%= nameCamel %>', null, { updateEvent: 'someEvent', data: { data: data }});
+            expect(ctrl.data).toBe(data);
         });
     });
 });

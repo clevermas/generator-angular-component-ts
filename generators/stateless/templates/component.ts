@@ -11,13 +11,13 @@
 class <%= nameCamel %> implements ng.IComponentOptions  {
 
     bindings:any = {
-        onModelChange: '&modelChange',
-        model: '=modelData',
-    };
+        updateEvent: '@',
+        data: '<modelData',
+    }
 
-    templateUrl:string = 'components/<%= componentDash %>/<%= nameCamel %>.html';
+    templateUrl:string = 'components/<%= componentDash %>/<%= nameCamel %>.html'
 
-    controller:string = '<%= nameCamel %>Ctrl';
+    controller:string = '<%= nameCamel %>Ctrl'
 
     constructor()
     {
@@ -26,7 +26,7 @@ class <%= nameCamel %> implements ng.IComponentOptions  {
 
 angular
     .module('<%= componentCamel %>')
-    .component('<%= nameCamel %>', new <%= nameCamel %>());
+    .component('<%= nameCamel %>', new <%= nameCamel %>())
 
 
 

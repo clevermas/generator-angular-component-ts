@@ -10,7 +10,8 @@
  */
 class <%= nameCamel %> implements ng.IComponentOptions  {
 
-    bindings:any = {
+    bindings:any =
+    {
         updateEvent: '@',
         data: '<modelData',
     }
@@ -21,6 +22,7 @@ class <%= nameCamel %> implements ng.IComponentOptions  {
 
     constructor()
     {
+        let $self = thisFeature
     }
 }
 

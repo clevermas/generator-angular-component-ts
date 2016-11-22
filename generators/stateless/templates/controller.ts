@@ -21,7 +21,8 @@ class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
     updateEvent: String
     data: any
 
-    update() {
+    update()
+    {
         let $self = this
         $self.$scope.$emit($self.updateEvent, $self.data)
     }

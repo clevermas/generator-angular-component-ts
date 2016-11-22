@@ -23,23 +23,31 @@ class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
     listeners
     data
 
-    responseHandler($event, res:any) {
+    responseHandler($event, res:any)
+    {
         this.data = res.data.data
     }
 
-    errorHandler($event, error:any) {
+    errorHandler($event, error:any)
+    {
 
+    }
+
+    $onDestroy()
+    {
+        this.listeners.forEach(listener => listener())
     }
 
     constructor(DataFlow, $state)
     {
         let $self = this
-        DataFlow.subscribe(
+
+        $self.listeners.push(DataFlow.subscribe(
             $state.current.name,
             DataFlow.formServiceString('SomeService', 'someMethod', ['argument']),
             $self.responseHandler,
             $self.errorHandler
-        )
+        ))
     }
 }
 

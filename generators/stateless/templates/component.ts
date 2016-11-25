@@ -22,7 +22,7 @@ class <%= nameCamel %> implements ng.IComponentOptions  {
 
     constructor()
     {
-        let $self = thisFeature
+        let $self = this
     }
 }
 

@@ -5,7 +5,7 @@
 interface I<%= nameCapitalize %>Ctrl
 {
   state: String
-  listeners: any
+  destroyListeners: Array
   data: any
 }
 
@@ -20,10 +20,10 @@ interface I<%= nameCapitalize %>Ctrl
 class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
 {
     state
-    listeners
     data
+    destroyListeners = []
 
-    responseHandler($event, res:any)
+    successHandler($event, res:any)
     {
         this.data = res.data.data
     }
@@ -35,17 +35,17 @@ class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
 
     $onDestroy()
     {
-        this.listeners.forEach(listener => listener())
+        this.destroyListeners.forEach(listener => listener())
     }
 
     constructor(DataFlow, $state)
     {
         let $self = this
 
-        $self.listeners.push(DataFlow.subscribe(
+        $self.destroyListeners.push(DataFlow.subscribe(
             $state.current.name,
-            DataFlow.formServiceString('SomeService', 'someMethod', ['argument']),
-            $self.responseHandler,
+            DataFlow.formServiceString('SomeService', 'someMethod', [$self.state]),
+            $self.successHandler,
             $self.errorHandler
         ))
     }

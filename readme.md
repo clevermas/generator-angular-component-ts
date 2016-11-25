@@ -15,7 +15,7 @@ yo angular-component-ts:route some-route-group some-new-route
 ### Service
 
 ```
-yo angular-component-ts:route some-module some-module-service
+yo angular-component-ts:service some-module some-module-service
 ```
 
 ### Statefull component

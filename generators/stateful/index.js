@@ -16,7 +16,7 @@ module.exports = generators.Base.extend({
         this.argument('name', {type: String, required: false});
 
         // Set first character lower-case
-        this.component = this.statefull[0].toLowerCase() + this.statefull.substr(1);
+        this.component = this.stateful[0].toLowerCase() + this.stateful.substr(1);
         if (!this.name) this.name = this.component;
         this.name = this.name[0].toLowerCase() + this.name.substr(1);
 

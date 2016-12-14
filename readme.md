@@ -18,15 +18,15 @@ yo angular-component-ts:route some-route-group some-new-route
 yo angular-component-ts:service some-module some-module-service
 ```
 
-### Statefull component
+### Stateful component
 Statefull components includes all logic in the controller.
 
 ```
-yo angular-component-ts:statefull some-statefull
+yo angular-component-ts:stateful some-stateful
 ```
 
 ```
-yo angular-component-ts:statefull some-module some-module-statefull
+yo angular-component-ts:stateful some-module some-module-stateful
 ```
 
 ### Stateless component

@@ -33,7 +33,6 @@ describe('<%= nameCamel %>', function () {
         }));
 
         it('should ...', function () {
-            var modelData = 'fake_data';
             var ctrl = component('<%= nameCamel %>', null, { state: 'someState' });
             expect(true).toBe(true)
         });

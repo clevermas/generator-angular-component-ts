@@ -32,7 +32,7 @@ describe('<%= nameCamel %>', function () {
             component = _$componentController_;
         }));
 
-        it('should ...', function () {
+        it('should set fake data', function () {
             var data = 'fake_data';
             var ctrl = component('<%= nameCamel %>', null, { updateEvent: 'someEvent', data: { data: data }});
             expect(ctrl.data).toBe(data);

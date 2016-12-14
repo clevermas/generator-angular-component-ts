@@ -9,8 +9,8 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments);
 
 
-        // This makes `statefull` a required argument.
-        this.argument('statefull', {type: String, required: true});
+        // This makes `stateful` a required argument.
+        this.argument('stateful', {type: String, required: true});
 
         // This makes `name` a required argument.
         this.argument('name', {type: String, required: false});

@@ -4,6 +4,7 @@
 
 interface <%= IName %> extends ng.IScope
 {
+    isPageLoaded: boolean
 }
 
 /**
@@ -19,7 +20,9 @@ class <%= ctrlName %>
 {
     constructor(public $scope:<%= IName %>)
     {
-
+        $scope.$on('$destroy', =>
+            $scope.$on('DataFlow.bucketLoaded(mainView)', () =>
+                $scope.isPageLoaded = true))
     }
 }
 

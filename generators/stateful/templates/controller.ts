@@ -23,12 +23,12 @@ class <%= nameCamel %>Ctrl implements I<%= nameCapitalize %>Ctrl
     data
     destroyListeners = []
 
-    successHandler($event, res:any)
+    successHandler = ($event, res:any) =>
     {
         this.data = res.data.data
     }
 
-    errorHandler($event, error:any)
+    errorHandler = ($event, error:any) =>
     {
 
     }

@@ -14,7 +14,7 @@ describe('Controller: <%= ctrlName %>', function () {
 
     // override general requests
     beforeEach(inject(function ($httpBackend) {
-        $httpBackend.when('GET', 'assets/i18n/en.json').respond(200, '')
+        $httpBackend.when('GET', 'assets/i18n/en.json?v=' + config.goodco_app.version).respond(200, '')
         $httpBackend.when('GET', config.goodco_api.host + '/v2/users/me').respond(200, {data: {}})
     }))
 

@@ -22,7 +22,7 @@ describe('<%= nameCamel %>', function () {
     // override general requests
     beforeEach(function () {
         backend.when('GET', config.goodco_api.host + '/v2/users/me').respond(200, {data: {}});
-        backend.when('GET', 'assets/i18n/en.json').respond(200, '');
+        backend.when('GET', 'assets/i18n/en.json?v=' + config.goodco_app.version).respond(200, '');
     });
 
     describe('Component', function() {
